@@ -7,7 +7,7 @@
     <meta name="google" content="notranslate" />
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css?v=5" />
     <link rel="stylesheet" href="/assets/css/nav.css?v=5" />
-    <link rel="stylesheet" href="/assets/css/chat.css?v=5" />
+    <link rel="stylesheet" href="/assets/css/chat.css?v=6" />
     <title>Google</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Rednotsus" />
@@ -86,6 +86,10 @@
 
             <div class="chat-content" id="chatContent" style="display: none;">
                 <div class="chat-info" id="chatInfo">
+                    <button class="mobile-chat-back" id="mobileChatBackBtn" type="button"
+                        aria-label="Back to conversations">
+                        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                    </button>
                     <div class="chat-avatar">
                         <div class="avatar-circle">
                             <span id="chatInitials"></span>
@@ -257,7 +261,7 @@
     <!-- Notification Container -->
     <div id="notificationContainer" class="notification-container"></div>
 
-    <script src="/assets/js/chat.js?v=2"></script>
+    <script src="/assets/js/chat.js?v=3"></script>
     <script>
         // Check authentication
         const uuid = localStorage.getItem('uuid');

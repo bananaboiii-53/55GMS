@@ -166,6 +166,10 @@ function setupEventListeners() {
 
   sendBtn.addEventListener("click", sendMessage);
 
+  document
+    .getElementById("mobileChatBackBtn")
+    .addEventListener("click", () => showChatWelcome());
+
   // Modal handlers
   document.getElementById("newChatBtn").addEventListener("click", () => {
     document.getElementById("newChatModal").style.display = "flex";
@@ -349,6 +353,7 @@ function showChatWelcome({ updateHistory = true } = {}) {
   }
 
   currentChatId = null;
+  document.body.classList.remove("chat-view-active");
   document.querySelectorAll(".chat-item").forEach((item) => {
     item.classList.remove("active");
   });
@@ -485,6 +490,7 @@ async function selectChat(chatId, { updateHistory = true } = {}) {
   }
 
   currentChatId = chatId;
+  document.body.classList.add("chat-view-active");
 
   // Join new chat room and start viewing it
   socket.emit("join_chat", chatId);

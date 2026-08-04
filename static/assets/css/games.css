@@ -97,6 +97,26 @@ h6 {
   margin-top: 5px;
 }
 
+.loading-retry {
+  padding: 10px 18px;
+  color: var(--site-text, #faf9f6);
+  background: var(--site-button, #506581);
+  border: 1px solid var(--site-control-border, rgba(255, 255, 255, 0.26));
+  border-radius: var(--site-radius-sm, 10px);
+  font: inherit;
+  cursor: pointer;
+}
+
+.loading-retry:hover {
+  background: var(--site-button-hover, #617896);
+}
+
+.loading-retry:focus-visible,
+.game-link:focus-visible {
+  outline: 3px solid var(--site-text, #faf9f6);
+  outline-offset: 3px;
+}
+
 @media screen and (max-width: 1000px) {
   .progress-bar-container {
     width: 80%;
@@ -191,13 +211,29 @@ h6 {
   position: relative;
   display: inline-block;
 }
+
+.game-link {
+  display: block;
+  position: relative;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: var(--site-radius-md, 14px);
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
 .game img {
   width: 175px;
   height: 175px;
   border-radius: var(--site-radius-md, 14px);
   transition: all 0.35s ease;
 }
-.game:hover img {
+.game:hover img,
+.game:focus-within img {
   transform: scale(1.05) translateY(-0.2vw);
   filter: brightness(0.7);
   box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.2);
@@ -217,9 +253,35 @@ h6 {
   transition: opacity 0.35s ease, transform 0.35s ease;
   animation: slide-out 0.35s ease forwards;
 }
-.game:hover .text {
+.game:hover .text,
+.game:focus-within .text {
   opacity: 1;
   animation: slide-in 0.35s ease forwards;
+}
+
+.game-image-error img {
+  opacity: 0.35;
+}
+
+@media (hover: none) {
+  .text {
+    width: calc(100% - 16px);
+    padding: 4px 6px;
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.72);
+    border-radius: 6px;
+    animation: none;
+    transform: translate(-50%, 0%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar,
+  .game img,
+  .text {
+    transition: none;
+    animation: none;
+  }
 }
 
 @keyframes slide-in {
