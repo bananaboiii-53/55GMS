@@ -1871,5 +1871,11 @@
     "url": "/misc/play/?title=Harvest Simulator&author=Camu&link=harvestsimulator",
     "image": "/misc/harvestsimulator/img.webp",
     "usesProxy": false
+  },
+  {
+    "name": "Bowmasters",
+    "url": "/misc/bowmasters/index.html",
+    "image": "/img/games/bowmasters.webp",
+    "usesProxy": false
   }
 ]
